@@ -1,4 +1,5 @@
 #Vincent Lin
+
 def menu():
     print("Menu")
     print("-------------")

@@ -1,43 +1,44 @@
 #Vincent Lin
-
+new_password = ""
 def menu():
     print("Menu")
     print("-------------")
     print("1. Encode")
     print("2. Decode")
     print("3. Exit")
-
+def encode():
+    global new_password  # made global for later use when decoding
+    password = input("Please enter your password to encode: ")
+    for i in password:
+        if i == "0":  # the if else statements check for each possible number 0-9
+            new_password += "3"
+        elif i == "1":
+            new_password += "4"
+        elif i == "2":
+            new_password += "5"
+        elif i == "3":
+            new_password += "6"
+        elif i == "4":
+            new_password += "7"
+        elif i == "5":
+            new_password += "8"
+        elif i == "6":
+            new_password += "9"  # each number is added by 3
+        elif i == "7":
+            new_password += "0"
+        elif i == "8":
+            new_password += "1"
+        elif i == "9":
+            new_password += "2"
+    return print("Your password has been encoded and stored!")
 def main():
     while True:
         menu()
         option = str(input("Please enter an option: "))
         if option == "1":
-            password = input("Please enter your password to encode: ")
-            print("Your password has been encoded and stored!")
+            encode()
         if option == "2":
-            newpass = ""
-            for element in password:
-                if element == "0":
-                    newpass += "3"
-                elif element == "1":
-                    newpass += "4"
-                elif element == "2":
-                    newpass += "5"
-                elif element == "3":
-                    newpass += "6"
-                elif element == "4":
-                    newpass += "7"
-                elif element == "5":
-                    newpass += "8"
-                elif element == "6":
-                    newpass += "9"
-                elif element == "7":
-                    newpass += "0"
-                elif element == "8":
-                    newpass += "1"
-                elif element == "9":
-                    newpass += "2"
-            print(f"The encoded password is {newpass}, and the original password is {password}.")
+            exit() #later fix
         elif option == "3":
             exit()
 if __name__ == "__main__":

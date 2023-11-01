@@ -8,6 +8,7 @@ def menu():
     print("3. Exit")
 def encode():
     global new_password  # made global for later use when decoding
+    global password
     password = input("Please enter your password to encode: ")
     for i in password:
         if i == "0":  # the if else statements check for each possible number 0-9
@@ -30,15 +31,16 @@ def encode():
             new_password += "1"
         elif i == "9":
             new_password += "2"
-    return print("Your password has been encoded and stored!")
+    return new_password
 def main():
     while True:
         menu()
         option = str(input("Please enter an option: "))
         if option == "1":
             encode()
+            print("Your password has been encoded and stored!")
         if option == "2":
-            exit() #later fix
+            print(f"The encoded password is {password}, and the original password is {new_password}")
         elif option == "3":
             exit()
 if __name__ == "__main__":
